@@ -2,7 +2,6 @@
 
 
 # imports
-import numpy as np
 import pandas as pd 
 from sklearn.linear_model import LinearRegression
 import statsmodels.api as sm
@@ -33,3 +32,43 @@ model3 = sm.OLS(POVERTY,MENTAL_HEALTH)
 model3_result = model3.fit()
 print(model3_result.summary())
 sm.graphics.plot_fit(model3_result,'MentalHealth',vlines=False)
+
+
+ELDERLY = dataset['Elderly']
+ELEVATION = dataset['Elevation']
+model4 = sm.OLS(ELDERLY,ELEVATION)
+model4_result = model4.fit()
+print(model4_result.summary())
+sm.graphics.plot_fit(model4_result,'Elevation',vlines=False)
+
+
+ElEVATION = dataset['Elevation']
+DISABILITY = dataset['Disability']
+model5 = sm.OLS(DISABILITY,ELEVATION)
+model5_result = model5.fit()
+print(model5_result.summary())
+sm.graphics.plot_fit(model5_result,'Elevation',vlines=False)
+
+
+HOMELESS = dataset['Homeless']
+ELEVATION = dataset['Elevation']
+model6 = sm.OLS(HOMELESS,ELEVATION)
+model6_result = model6.fit()
+print(model6_result.summary())
+sm.graphics.plot_fit(model6_result,'Elevation',vlines=False)
+
+
+ENGLISH = dataset['English']
+ELEVATION = dataset['Elevation']
+model7 = sm.OLS(ENGLISH,ELEVATION)
+model7_result = model7.fit()
+print(model7_result.summary())
+sm.graphics.plot_fit(model7_result,'Elevation',vlines=False)
+
+
+LIVING_ALONE = dataset['LivAlone']
+ELEVATION = dataset['Elevation']
+model8 = sm.OLS(LIVING_ALONE,ELEVATION)
+model8_result = model8.fit()
+print(model8_result.summary())
+sm.graphics.plot_fit(model8_result,'Elevation',vlines=False)
